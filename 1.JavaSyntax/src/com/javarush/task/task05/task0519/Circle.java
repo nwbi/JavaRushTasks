@@ -28,7 +28,7 @@ public class Circle {
         this.width = width;
         this.color = color;
     }
-        
+
     //напишите тут ваш код
 
     public static void main(String[] args) {
