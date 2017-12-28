@@ -28,16 +28,19 @@ public class Solution {
         int num4 = Integer.parseInt(reader.readLine());
         int num5 = Integer.parseInt(reader.readLine());
 
-        int minimum1 = min(num1, num2);
-        int minimum2 = min(minimum1, num3);
-        int minimum3 = min(minimum2, num4);
-        int minimum4 = min(minimum3, num5);
+        int minimum = min(num1, num2, num3, num4, num5);
 
-        System.out.println("Minimum = " + minimum4);
+        System.out.println("Minimum = " + minimum);
     }
 
 
-    public static int min(int a, int b) {
-        return a < b ? a : b;
+    public static int min(int a, int b, int c, int d, int e) {
+        int m1, m2, m3, m4, m5;
+        m1 = a < b ? a : b;
+        m2 = m1 < c ? m1 : c;
+        m3 = m2 < d ? m2 : d;
+        m4 = m3 < e ? m3 : e;
+        return m4;
+
     }
 }
