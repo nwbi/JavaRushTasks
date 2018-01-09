@@ -2,8 +2,6 @@ package com.javarush.task.task07.task0708;
 
 import com.sun.org.apache.xpath.internal.SourceTree;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,25 +23,41 @@ import java.util.Scanner;
 */
 
 public class Solution {
-    private static List<String> strings;
+    private static List<String> strings = new ArrayList<>();
+
+        public static void main(String[] args) {
+            Scanner reader = new Scanner(System.in);
 
 
-    public static void main(String[] args) throws Exception {
+            for (int i = 0; i < 5; i++) {
+                strings.add(reader.nextLine());
+            }
 
-        Scanner sc = new Scanner(System.in);
+            int maxLength = 0;
+            for (int i = 0; i < 5; i++)
+                if (strings.get(i).length() > maxLength) {
+                    maxLength = strings.get(i).length();
+            }
 
-        strings = new ArrayList<String>();
+            for (int i = 0; i < strings.size(); i++) {
+                if (strings.get(i).length() == maxLength)
+                    System.out.println(strings.get(i));
+            }
 
+            // рабочий второй вариант
+            /*
+            for (String string : strings) {
+                if (string.length() > maxLength) {
+                    maxLength = string.length();
+                }
+            }
 
-        for (int i = 0; i < 5; i++) {
-
-            strings.add(sc.nextLine());
-
-            int size = 0;
-            if (strings.size() > size) size = strings.size();
-            System.out.println(size);
+            for (String string : strings) {
+                if (string.length() == maxLength) {
+                    System.out.println(string);
+                }
+            }
+            */
         }
-
-        //напишите тут ваш код
-    }
 }
+
