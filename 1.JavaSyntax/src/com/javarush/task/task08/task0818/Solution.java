@@ -26,18 +26,22 @@ public class Solution {
     }
 
     public static void removeItemFromMap(HashMap<String, Integer> map) {
-        for(HashMap.Entry<String, Integer> pair : map.entrySet()){
-            String key = pair.getKey();
-            Integer value = pair.getValue();
-            if(value < 500) removeItemFromMap(map<key, value>);
+
+        HashMap<String, Integer> copy = new HashMap<String, Integer>(map);
+
+        for(HashMap.Entry<String, Integer> pair : copy.entrySet()){
+
+            if (pair.getValue() < 500) {
+                map.remove(pair.getKey());
+            }
         }
 
-         for(HashMap.Entry<String, Integer> pair : map.entrySet())
+         /*for(HashMap.Entry<String, Integer> pair : map.entrySet())
         {
             String key = pair.getKey();
             Integer value = pair.getValue();
             System.out.println(key + " - " + value);
-        }
+        }*/
     }
 
     public static void main(String[] args) {
